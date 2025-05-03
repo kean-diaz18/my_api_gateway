@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My PHP API Gateway Docs</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; max-width: 800px; margin: auto; }
+  </style>
+</head>
+<body>
+  <h1>PHP API Gateway Documentation</h1>
+
+  <p>This gateway routes requests and enforces API key validation and rate limiting.</p>
+
+  <h2>Authentication</h2>
+  <p>Pass your API key in the header:</p>
+  <pre>
+X-API-Key: your_api_key_here
+  </pre>
+
+  <h2>Rate Limiting</h2>
+  <p>Each key is limited to 10 requests per 60 seconds.</p>
+
+  <h2>Endpoints</h2>
+  <ul>
+    <li>/api/users - Get all users</li>
+    <li>/api/products - Get all products</li>
+    <li>/api/dashboard - Aggregated users and products</li>
+  </ul>
+
+  <h2>Example Request (cURL)</h2>
+  <pre>
+curl -H "X-API-Key: key123" http://localhost/gateway.php?request_path=dashboard
+  </pre>
+
+  <h2>Log Analysis</h2>
+  <p>View gateway usage at: analyze_log.php</p>
+</body>
+</html>
